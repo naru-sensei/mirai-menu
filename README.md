@@ -55,7 +55,9 @@ sequenceDiagram
 
 テーブルのQRを読むと、テーブルIDつきの注文ページが開きます。
 
-<img src="docs/table-qr.png" width="200" alt="テーブルQR">
+<img src="docs/table-qr.png" width="200" alt="テーブルQR"> <img src="docs/order-page.png" width="280" alt="注文ページ（テーブル audience）">
+
+注文ページでは、ニックネームを入れて、アレルギーや苦手なもの（えび、きのこ、乳、卵、小麦、アルコールなど）をタップすると、それを含むメニューが除外されます。
 
 [注文ページ（table=audience）](https://trattoria-luce-backend.wlknts28786.workers.dev/order?table=audience)
 
