@@ -20,6 +20,11 @@ Grok Bot Tokyo Hackathon / Team Null.　#GrokBotTokyoHackathon
 
 - **仮想店舗のバックエンド**：デモ用レストラン「Trattoria Luce」の注文システム（Cloudflare Workers）
 - **スマホ向けオーダーUI**：テーブルQRから開く注文ページ。苦手・アレルギーをタップするとメニューから除外
+
+<img src="docs/phone-table.png" width="260" alt="スマホの注文ページ（人数選択・テーブル作成・4桁番号で参加）"> <img src="docs/ipad-menu.png" width="420" alt="iPadのメニュー画面（アレルギー・苦手をタップで除外）">
+
+左：スマホの注文ページ（人数を選んでテーブルを作成し、4桁の番号で参加）　右：iPadのメニュー画面（アレルギー・苦手をタップで除外）
+
 - **ボット間連携の共通スキル**（`skill/SKILL.md`）と **WebHook 送信スクリプト**（`scripts/send.sh`）
 - **ボットテンプレート**「[ミライのメニュー](https://x.ai/bot/1BHUOHWBfRAnBVDoq5hPN)」（`bot-template/`）
 - **プレゼンスライド**と、この **README**
