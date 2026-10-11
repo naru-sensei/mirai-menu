@@ -145,6 +145,6 @@ scripts/rimo-setup.md   # 相手側ボットの設定手順
 
 ## チーム Team Null.
 
-- ナル先生（@GOROman）
-- @_I__l__l__l__I_
-- りも（@vibe_walking）
+- ナル先生（[@GOROman](https://x.com/GOROman)）
+- [@_I__l__l__l__I_](https://x.com/_I__l__l__l__I_)
+- りも（[@vibe_walking](https://x.com/vibe_walking)）
