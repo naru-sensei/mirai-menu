@@ -43,6 +43,42 @@ sequenceDiagram
 
 ## 実証
 
+> ✅ **持ち主が違うボット同士の WebHook 通信に成功**
+> 成美さんの「飲み会メンバーA」と、別アカウントのりもさんの Grok Bot が、共通スキル（`skill/SKILL.md`）と WebHook でつながり、通信できました。
+
+### 別アカウント間連携のしくみ
+
+```mermaid
+sequenceDiagram
+    participant A as 成美さんのボット（飲み会メンバーA）
+    participant B as りもさんのGrok Bot
+    Note over A,B: 両方に共通スキル mirai-menu-bot-link と<br/>WebHookトリガーのルーティンを設定
+    A->>B: send.sh で POST（Authorization: Bearer 送信キー）<br/>{protocol: "mirai-menu/v1", passphrase, from_bot, table_id, type: "preferences", constraints}
+    Note over B: protocol と合言葉が一致しなければ無視
+    B->>A: POST type: "proposal"（全員のNGを避けた注文案）
+    A->>B: POST type: "agree" または "reject"（修正案付き）
+    Note over A,B: agree で終了（table_id ごとに最大5往復）
+```
+
+メッセージ形式（JSON、値は例）：
+
+```json
+{
+  "protocol": "mirai-menu/v1",
+  "passphrase": "<合言葉>",
+  "from_bot": "<ボット名>",
+  "table_id": "<お店・テーブルまたはイベントID>",
+  "type": "preferences | proposal | agree | reject",
+  "constraints": { "avoid": ["..."], "allergy": true, "drinks": "..." },
+  "proposal": ["..."],
+  "note": "短いメモ"
+}
+```
+
+送るのは注文に必要な「避けるもの」だけ。名前や理由、健康情報は送りません。
+
+### 同一アカウント内の実証
+
 幹事Bot＋飲み会メンバー A/B/C の4体の Grok Bot で実証しました。各メンバーが自分のボットに苦手を伝え、ボット同士が相談して注文を作ります。持ち主が内容を訂正した場合も、ボット間の相談に反映されます。
 
 ![実証9](docs/slides/slide-09.png)
@@ -56,7 +92,7 @@ sequenceDiagram
 ## 発想
 
 コードを書かせるのではなく、各自の Grok Bot が持ち主の代わりに交渉し、人と人の間に入る「クッション役」になります。
-メモリ（持ち主の苦手を覚える）＋ボット間メッセージ＋WebHook＋共通スキルの組み合わせで、別アカウントのボット同士もつながります。
+メモリ（持ち主の苦手を覚える）＋ボット間メッセージ＋WebHook＋共通スキルの組み合わせで、別アカウントのボット同士もつながります。持ち主が違うボット同士が共通プロトコルでつながることを、実際に実証しました。
 
 ## 価値
 
@@ -69,7 +105,7 @@ sequenceDiagram
 ## スケール
 
 - 外食は誰でもする
-- 共通スキルを入れて WebHook URL を交換するだけで、誰のボットでも参加できるプロトコル
+- 共通スキルを入れて WebHook URL を交換するだけで、誰のボットでも参加できるプロトコル（別アカウント間の通信を実証済み）
 - ボットテンプレートを配布。会食・旅行・社食・病院食へ展開できる
 
 ## すぐ試す
@@ -78,7 +114,7 @@ sequenceDiagram
 2. 相手と WebHook URL・送信キーを交換し、チャットに貼らず環境変数 `MIRAI_PEER_URL` / `MIRAI_PEER_KEY` に保存（手順：`scripts/rimo-setup.md`）
 3. ボットに苦手を伝えて、`scripts/send.sh msg.json` で相談を送る
 
-※ 別アカウント間の WebHook 往復テストは、現時点では未確認です。
+※ 別アカウント間の WebHook 通信は、成美さんのボットとりもさんのボットで成功済みです。
 
 ## プライバシー
 
@@ -87,6 +123,7 @@ sequenceDiagram
 
 ## 今後
 
+- 店舗テーブルの QR を読むだけで、同じテーブルの各自の Grok Bot が WebHook URL・送信キー・合言葉を自動交換。table_id も QR から決まる（手渡し不要）
 - モバイルオーダーとの連携
 - 「いつもの」注文
 - 言いにくいクレームの代弁
