@@ -77,7 +77,7 @@ sequenceDiagram
 
 注文ページでは、ニックネームを入れて、アレルギーや苦手なもの（えび、きのこ、乳、卵、小麦、アルコールなど）をタップすると、それを含むメニューが除外されます。
 
-[注文ページ（table=audience）](https://trattoria-luce-backend.wlknts28786.workers.dev/order?table=audience)
+[注文ページ](https://trattoria-luce-backend.wlknts28786.workers.dev/)
 
 ### 別アカウント間連携のしくみ
 
