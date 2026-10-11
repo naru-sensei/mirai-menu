@@ -14,7 +14,7 @@
 - 全員が食べられる注文がカートに入っている。言い出さなくても、ボットがわかってくれる
 
 Grok Bot Tokyo Hackathon / Team Null.　#GrokBotTokyoHackathon
-📄 [スライドPDF](docs/slides/deck.pdf) ／ [元スライド（Google Slides）](https://docs.google.com/presentation/d/1IESMkPl6OmQ2s9EjJ7oOq8lbBzCpp4g4Wep9fnaoqFo/edit)
+📄 [スライドPDF](docs/slides/deck.pdf) ／ [元スライド（Google Slides）](https://docs.google.com/presentation/d/1IESMkPl6OmQ2s9EjJ7oOq8lbBzCpp4g4Wep9fnaoqFo/edit?usp=sharing)
 
 ## 課題
 
