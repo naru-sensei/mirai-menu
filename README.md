@@ -16,6 +16,14 @@
 Grok Bot Tokyo Hackathon / Team Null.　#GrokBotTokyoHackathon
 📄 [スライドPDF](docs/slides/deck.pdf) ／ [元スライド（Google Slides）](https://docs.google.com/presentation/d/1IESMkPl6OmQ2s9EjJ7oOq8lbBzCpp4g4Wep9fnaoqFo/edit?usp=sharing)
 
+## 今回作ったもの（すべて Grok Bot が作成）
+
+- **仮想店舗のバックエンド**：デモ用レストラン「Trattoria Luce」の注文システム（Cloudflare Workers）
+- **スマホ向けオーダーUI**：テーブルQRから開く注文ページ。苦手・アレルギーをタップするとメニューから除外
+- **ボット間連携の共通スキル**（`skill/SKILL.md`）と **WebHook 送信スクリプト**（`scripts/send.sh`）
+- **ボットテンプレート**「[ミライのメニュー](https://x.ai/bot/1BHUOHWBfRAnBVDoq5hPN)」（`bot-template/`）
+- **プレゼンスライド**と、この **README**
+
 ## プレゼン資料
 
 - 📊 [プレゼンスライド（Google Slides）](https://docs.google.com/presentation/d/1IESMkPl6OmQ2s9EjJ7oOq8lbBzCpp4g4Wep9fnaoqFo/edit?usp=sharing)
