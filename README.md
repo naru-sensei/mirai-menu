@@ -51,6 +51,14 @@ sequenceDiagram
 > ✅ **持ち主が違うボット同士の WebHook 通信に成功**
 > ナル先生の「飲み会メンバーA」と、別アカウントのりもさんの Grok Bot が、共通スキル（`skill/SKILL.md`）と WebHook でつながり、通信できました。
 
+### テーブルQRから注文ページへ（実装済み）
+
+テーブルのQRを読むと、テーブルIDつきの注文ページが開きます。
+
+<img src="docs/table-qr.png" width="200" alt="テーブルQR">
+
+[注文ページ（table=audience）](https://trattoria-luce-backend.wlknts28786.workers.dev/order?table=audience)
+
 ### 別アカウント間連携のしくみ
 
 ```mermaid
