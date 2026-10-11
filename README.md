@@ -1,3 +1,5 @@
+> このREADMEは全てGrok Botが書きました。
+
 # ミライのメニュー（ミライの飲食店）
 
 ![表紙](docs/slides/slide-01.png)
