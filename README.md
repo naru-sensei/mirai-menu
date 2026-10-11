@@ -49,13 +49,13 @@ sequenceDiagram
 ## 実証
 
 > ✅ **持ち主が違うボット同士の WebHook 通信に成功**
-> 成美さんの「飲み会メンバーA」と、別アカウントのりもさんの Grok Bot が、共通スキル（`skill/SKILL.md`）と WebHook でつながり、通信できました。
+> @GOROman の「飲み会メンバーA」と、別アカウントのりもさんの Grok Bot が、共通スキル（`skill/SKILL.md`）と WebHook でつながり、通信できました。
 
 ### 別アカウント間連携のしくみ
 
 ```mermaid
 sequenceDiagram
-    participant A as 成美さんのボット（飲み会メンバーA）
+    participant A as @GOROman のボット（飲み会メンバーA）
     participant B as りもさんのGrok Bot
     Note over A,B: 両方に共通スキル mirai-menu-bot-link と<br/>WebHookトリガーのルーティンを設定
     A->>B: send.sh で POST（Authorization: Bearer 送信キー）<br/>{protocol: "mirai-menu/v1", passphrase, from_bot, table_id, type: "preferences", constraints}
@@ -119,7 +119,7 @@ sequenceDiagram
 2. 相手と WebHook URL・送信キーを交換し、チャットに貼らず環境変数 `MIRAI_PEER_URL` / `MIRAI_PEER_KEY` に保存（手順：`scripts/rimo-setup.md`）
 3. ボットに苦手を伝えて、`scripts/send.sh msg.json` で相談を送る
 
-※ 別アカウント間の WebHook 通信は、成美さんのボットとりもさんのボットで成功済みです。
+※ 別アカウント間の WebHook 通信は、@GOROman のボットとりもさんのボットで成功済みです。
 
 ## プライバシー
 
