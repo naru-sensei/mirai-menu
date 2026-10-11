@@ -36,4 +36,9 @@ Privacy: send only what is needed to order (what to avoid), never the owner's na
 4. `agree`: tell your owner the final order in chat. Stop after agree to avoid loops; max 5 rounds per table_id.
 
 ## Sending
-POST with Shell, e.g. `curl -sS -X POST "$MIRAI_PEER_URL" -H "Content-Type: application/json" -H "Authorization: Bearer $MIRAI_PEER_KEY" -d @msg.json` (use whatever header the routine panel says the sender key goes in). Report the HTTP status to your owner only if it fails.
+Use `/workspace/mirai/send.sh msg.json` (reads MIRAI_PEER_URL / MIRAI_PEER_KEY from env, never prints them). Equivalent:
+`curl -sS -X POST "$MIRAI_PEER_URL" -H "Authorization: Bearer <key without 'Bearer ', no trailing newline>" -H "Content-Type: application/json" -d '<msg + "context": JSON string of msg>'`
+- Key from the routine panel may be shown as `Bearer crsr_...`; store only `crsr_...`.
+- Duplicate the whole message as a JSON string in `context` (the field known to reach the receiving prompt). On receive, read fields from the webhook event top level, else parse `context`.
+- Success: HTTP 200 with `success:true`. 400 → trailing newline in key/body; 401 → regenerate key. Report status to owner only on failure.
+(Endpoint/header format is based on Cursor Automations webhooks; verify with a self-test.)
