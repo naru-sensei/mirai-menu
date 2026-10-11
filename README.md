@@ -16,6 +16,11 @@
 Grok Bot Tokyo Hackathon / Team Null.　#GrokBotTokyoHackathon
 📄 [スライドPDF](docs/slides/deck.pdf) ／ [元スライド（Google Slides）](https://docs.google.com/presentation/d/1IESMkPl6OmQ2s9EjJ7oOq8lbBzCpp4g4Wep9fnaoqFo/edit?usp=sharing)
 
+## プレゼン資料
+
+- 📊 [プレゼンスライド（Google Slides）](https://docs.google.com/presentation/d/1IESMkPl6OmQ2s9EjJ7oOq8lbBzCpp4g4Wep9fnaoqFo/edit?usp=sharing)
+- 📄 [スライドPDF](docs/slides/deck.pdf)
+
 ## 課題
 
 ![課題](docs/slides/slide-03.png)
