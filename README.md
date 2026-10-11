@@ -2,6 +2,10 @@
 
 **Grok Bot Tokyo Hackathon / Team Null.**　#GrokBotTokyoHackathon
 
+![スライド1](docs/slides/slide-01.png)
+
+📄 [スライドPDF](docs/slides/deck.pdf) ／ [元スライド（Google Slides）](https://docs.google.com/presentation/d/1IESMkPl6OmQ2s9EjJ7oOq8lbBzCpp4g4Wep9fnaoqFo/edit)
+
 > 言い出さなくても、ボットがわかってくれる。
 > ひとりひとりの AI が、みんなの食卓をやさしくする。
 
@@ -9,6 +13,8 @@
 各自の Grok Bot が持ち主の苦手な食材・アレルギー・飲めるお酒を覚えておき、お店でボット同士が相談して「全員が食べられる注文」を作ります。
 
 ## 解きたい課題
+
+![スライド3](docs/slides/slide-03.png)
 みんなで打ち上げや会食をするとき――
 - 苦手な食材があるけど言い出せない
 - 実はアルコールが苦手
@@ -17,6 +23,8 @@
 自分の代わりに、自分の AI エージェント（Grok Bot）が注文をしてくれたら？
 
 ## 仕組み
+
+![スライド6](docs/slides/slide-06.png)
 1. 自分の Grok Bot が、苦手な食材・アレルギー・飲めるお酒を覚えている
 2. お店で QR をスキャンすると、みんなのボットがテーブルに集合
 3. ボット同士が相談する（中身は相手に見せない）
@@ -38,6 +46,12 @@ sequenceDiagram
 ```
 
 ## デモ / 実証
+
+![スライド9](docs/slides/slide-09.png)
+![スライド10](docs/slides/slide-10.png)
+![スライド11](docs/slides/slide-11.png)
+![スライド12](docs/slides/slide-12.png)
+![スライド13](docs/slides/slide-13.png)
 幹事Botと飲み会メンバー A/B/C のボットで実証しました。ボット同士が「こっそり相談」する例：
 
 - メンバー A のボット：甲殻類は避けてください
@@ -49,6 +63,8 @@ sequenceDiagram
 別アカウントのボットとは Webhook で連携します（下記）。
 
 ## 価値
+
+![スライド14](docs/slides/slide-14.png)
 - **お客さん**：苦手を言い出す気まずさゼロ。アレルギー事故も防げる
 - **お店**：着席してすぐ注文が決まる。接客の手間を減らせる
 
